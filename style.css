@@ -122,6 +122,22 @@
      
 }
 @media (min-width: 481px)  {
+    #products-div{
+        background-color: transparent;
+        height: 280px;
+        
+        border: solid 3px;
+        border-radius: 4px;
+       margin-left: 25px;
+        
+        margin-top: 25px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+        border-color: #004466;
+        
+        bottom: 0px;
+    }
 
 html {
     background-image: url('images/background.jpg');
@@ -148,22 +164,7 @@ html {
     border-color: #004466;
     
 }
-#products-div{
-    background-color: transparent;
-    height: 280px;
-    
-    border: solid 3px;
-    border-radius: 4px;
-   margin-left: 25px;
-    
-    margin-top: 25px;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 5px;
-    border-color: #004466;
-    
-    bottom: 0px;
-}
+
 
 #relieved{
     padding: 30px;
@@ -343,7 +344,7 @@ span{
     height: 250px;
     border: dashed 3px ;
     border-radius: 4px;
-    margin: 45px;
+    margin: 50px;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
@@ -487,6 +488,33 @@ span{
     border-color: rgb(122, 119, 119);
   }
   @media (max-width: 480px) {
+    #products-div{
+        background-color: transparent;
+        height: 280px;
+        
+        border: solid 3px;
+        border-radius: 4px;
+       margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 25px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+        border-color: #004466;
+        
+        bottom: 0px;
+    }
+    #patients{
+        margin-left: 25px;
+    }
+      #comp{
+          margin-top: 90px !important;
+          margin-right: 40px !important;
+          
+      }
+      #item-style{
+          padding-left: 3px;
+      }
       #compounds{
          
           display: flex;
@@ -500,8 +528,8 @@ span{
         background-color: #004466;
         margin-right: 5px;
         margin-top: 10px;
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
     
      .item.can-drop{
@@ -528,4 +556,3 @@ span{
        
     }
   } 
-  

@@ -239,6 +239,7 @@ function showProducts(){
       med = ` 
       <div id="${element.class}" class="product-item is-hidden">
   <img width="110px" id="medicImg" src="${element.img}">
+  <span id="info">Click For More Information</span>
   </div>
   `
     }else{
