@@ -194,6 +194,9 @@ var item2='';
 var item3 =''
 var comp ='';
 var show ='';
+var dropped1='';
+var dropped2="";
+var dropped3="";
 var productResult="";
 var compoundsdiv = document.getElementById('compounds');
 var products = document.getElementById('products');
@@ -420,7 +423,11 @@ interact('.item')
        compined[`${three}+${one}+${two}`] ||
        compined[`${one}+${two}`] || compined[`${two}+${one}`]
        
-      
+       dropped1 = document.getElementById(one)
+       
+       dropped2 = document.getElementById(two)
+       
+       dropped3 = document.getElementById(three)
       if(medicTarget!==undefined ){
 
         medicines.forEach(element => {
@@ -447,6 +454,11 @@ interact('.item')
               }
               
               product.classList.add('is-active') 
+              
+                dropped1.classList.add('is-hidden')
+                dropped2.classList.add('is-hidden')
+                dropped3.classList.add('is-hidden')
+              
             }
          
         
@@ -588,6 +600,9 @@ interact('.item')
     result.classList.remove('is-active')
      
       productResult.classList.remove('is-hidden')
+      dropped1.classList.remove('is-hidden')
+                dropped2.classList.remove('is-hidden')
+                dropped3.classList.remove('is-hidden')
       
     
   }
