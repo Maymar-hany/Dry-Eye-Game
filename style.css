@@ -16,6 +16,7 @@
       height: 328px;
       width:168px;
   }
+
   
 #match{
     
@@ -128,7 +129,7 @@
         
         border: solid 3px;
         border-radius: 4px;
-       margin-left: 25px;
+       margin-left: 10px;
         
         margin-top: 25px;
         align-items: center;
@@ -138,6 +139,7 @@
         
         bottom: 0px;
     }
+    
 
 html {
     background-image: url('images/background.jpg');
@@ -157,7 +159,8 @@ html {
     height: 250px;
     border: dashed 3px ;
     border-radius: 4px;
-    margin: 20px;
+    margin: 19px;
+    margin-right: 27px;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
@@ -198,7 +201,7 @@ html {
     height: 80px;
 }
 #lab{
-    font-size: 25px;
+    font-size: 20px;
     color:#004466;
 }
 #product-txt{
@@ -355,8 +358,6 @@ p{
     border: 3px ;
     border-radius: 4px;
     
-    
-    
     padding-top: 3px;
     border-color: #004466;  
 }
@@ -406,7 +407,8 @@ p{
     margin-bottom:5px;
     font-size: 12px;
     color:#004466
-  }   
+  } 
+  
 }
 @media (min-width: 481px){
    
@@ -498,6 +500,7 @@ p{
         
         bottom: 0px;
     }
+
     #patients{
         margin-left: 25px;
     }
