@@ -191,19 +191,20 @@ html {
 }
 .single-product{
     
-    width: 60px;
-    
-   
-    height: 90px;
+    width: 70px;
+    margin-bottom: 15px;
+    padding: 5px;
+   margin-right: 25px;
+    height: 80px;
 }
 #lab{
     font-size: 25px;
     color:#004466;
 }
 #product-txt{
-    font-size: 25px;
+    font-size: 20px;
     color:#004466;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .item {
@@ -284,20 +285,13 @@ p{
 }
 #product-style{
     cursor: pointer;
-}
-span{
-    display: none;
-}
-#product-style span {
-     background: rgba(20, 85, 160, 0.678);   
-     color: #fff;   
-     
+    padding-bottom: 17px;
     
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-       font-size: 10px;
-                  }
+    
+}
+
+
+
 #description{
     padding-top: 40px;
 }
@@ -344,7 +338,7 @@ span{
     height: 250px;
     border: dashed 3px ;
     border-radius: 4px;
-    margin: 50px;
+    margin: 55px;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
@@ -357,13 +351,13 @@ span{
 }
 #products{
     background-color: transparent;
-    height: 200px;
+    height: 250px;
     border: 3px ;
     border-radius: 4px;
-    margin: 45px;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
+    
+    
+    
+    padding-top: 3px;
     border-color: #004466;  
 }
   
@@ -490,7 +484,7 @@ span{
   @media (max-width: 480px) {
     #products-div{
         background-color: transparent;
-        height: 280px;
+        height: 400px;
         
         border: solid 3px;
         border-radius: 4px;

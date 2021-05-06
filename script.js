@@ -110,12 +110,7 @@ var medicines=[
     img:'images/tearfid.png',
     des:'images/tearfid-des.jpg'
   },
-  {
-    id:'tioretin',
-    class:'tioretin1',
-    img:'images/tioretin.png',
-    des:'images/tiorten-des.jpg'
-  },
+
   {
     id:'iridium',
     class:'iridium1',
@@ -127,6 +122,12 @@ var medicines=[
     class:'ribolisin1',
     img:'images/ribolisin.png',
     des:'images/ribolsin-des.jpg'
+  },
+  {
+    id:'tioretin',
+    class:'tioretin1',
+    img:'images/tioretin.png',
+    des:'images/tiorten-des.jpg'
   },
   {
     id:'iridium-gel',
@@ -233,24 +234,27 @@ function showMedicine ( params  ){
   }); 
   
 }
+var cunt=0
 function showProducts(){
   medicines.forEach(element => {
+    cunt++
     if(element.id==='iridium-gel'){
       med = ` 
-      <div id="${element.class}" class="product-item is-hidden">
+      <div id="${element.class}" class="product-item  is-hidden">
   <img width="110px" id="medicImg" src="${element.img}">
-  <span id="info">Click For More Information</span>
+  
   </div>
   `
     }else{
       med = ` 
-     <div id="product-style" class="column is-3">
+     <div id="product-style" >
       <div id="${element.class}" class="single-product is-hidden product-item " onclick = "openDescription(this.id)">
     
   <img  id="medicImg" src="${element.img}">
+  
   </div>
   
-            <span id="info">Click For More Information</span>
+            
         
   </div>
   
@@ -259,14 +263,17 @@ function showProducts(){
     }
  
   products.innerHTML +=med
-  var moreInfo =document.getElementById("product-style")
-  var span = document.getElementById('info')
+/*   var moreInfo =document.getElementById(element.class)
+  
+  var span = document.getElementById(cunt)
+  console.log(span);
 moreInfo.addEventListener("mouseover", event => {
   span.style.display='inline-block'
+  
 });
 moreInfo.addEventListener("mouseout", event => {
   span.style.display='none'
-});
+}); */
 }); 
 }
 function addCompounds (){
