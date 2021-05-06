@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eye Care</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+      </head>
+      <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <body>
+    
+  <div class="tile is-ancestor is-flex reverse-columns">
+    <div id="patient-tile" class="tile is-3 is-vertical is-parent">
+      <div  class="tile is-child">
+        <div id="patients" class="columns is-mobile is-multiline">
+
+        </div>
+       </div>
+    </div>
+    
+    <div class="tile is-parent is-vertical">
+      <div class="tile is-child">
+        
+        <div id="" class="columns is-multiline">
+        <div id="labs" class="columns">
+          <div class="column is-12 ">
+            <div class="dropzone">
+                  
+                      <h2 id="lab" class="title has-text-centered">Laboratory </h2> 
+                  </div>
+                  
+                </div>
+                
+                <div class="column is-3">
+                  <div id="medicine" >
+                    
+                  </div> 
+                </div>
+            </div>
+          </div>
+      </div>
+      <div  class="tile is-child columns ">
+           <div id="products-div" class="column is-11">
+            
+            <h2 id="product-txt" class=" title has-text-centered">Products </h2> 
+            <div id="products" class="columns is-multiline">
+
+            </div>
+           </div>
+        
+        </div>
+    </div>
+    <div id="compounds-tile" class="tile is-3 is-vertical is-parent">
+      
+        
+          <div id="logo"></div>
+            <div id="time" class="columns is-mobile  is-multiline">
+          
+          <div class="base-timer" id="score-div">
+            <p id="base-timer-text"  class="title has-text-centered">Score</p>
+            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <g class="base-timer__circle">
+                <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+              </g>
+            </svg>
+            <span id="base-timer-label" class="base-timer__label">
+              <label id="score">0</label><label>/9</label>
+            </span>
+          </div>
+        </div>
+      
+      <div id="comp" class="tile is-child ">
+        <div id="compounds" class="columns is-mobile is-multiline">
+         
+        </div>
+      </div>
+    </div>
+
+</div>
+
+  <div id="winner" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="wins" class="modal-content has-text-centered">
+     
+        
+          <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
+           <p id="wintxt"  class=" title">   Winner !</p>
+           <p id="wintxt">Score: <label id="sc"></label> </p>
+           <p  id="wintxt"> Time : <label id="min"></label>:<label id="sec"></label></p>
+           <button  class="play-again" onClick="window.location.href=window.location.href">Play Again</button>
+        
+    </div>
+  </div>
+  <div id="relieved-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="relieved" class="modal-content has-text-centered">
+          <button class="modal-close is-large" aria-label="close" onclick="closeresult()"></button>
+          <p id="result-txt"> Result </p>
+           <p id="result-txt"  class=" title"> Relieved </p>
+             
+    </div>
+  </div>  
+  <div id="suffer-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="suffer" class="modal-content has-text-centered">
+          <button class="modal-close is-large" aria-label="close" onclick="closesuffer()"></button>
+          <p id="result-txt"> Result </p>
+           <p id="result-txt"  class=" title"> Still Suffering! </p>
+             
+    </div>
+  </div>  
+   
+  <div id="product" class="modal">
+    <div class="modal-background">
+  
+    </div>
+    <div id="output-div" class="modal-content has-text-centered">
+      <div class="card">
+
+      <header class="card-header">
+        <p class="card-header-title">
+          Product
+        </p>
+      </header>
+      <button class="modal-close is-large" aria-label="close" onclick="closeproduct()"></button>
+        <div  class="card-image">
+          
+            <img  id="output" >
+        </div>
+        <footer class="card-footer">
+          <button id="match" class="card-header-title" onclick="matchproduct()"> Match With Infection</button>
+        </footer>
+      </div>
+    </div>
+  </div> 
+  <div id="description-div" class="modal">
+    <div class="modal-background">
+  
+    </div>
+    <div  class="modal-content has-text-centered">
+      <div class="card">
+
+   
+      <button class="modal-close is-large" aria-label="close" onclick="closedescription()"></button>
+        <div  class="card-image">
+          
+            <img  id="description" >
+        </div>
+        <div class="card-content">
+
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- <embed src='SoundURLHere' autostart='true' hidden='true' loop='false' name="jukebox"> -->
+<div id="startgame" class="modal is-active">
+  <div class="modal-background srt">
+  
+</div>
+<div id="strt"  onclick="startGame()">
+
+</div>
+ 
+  </div>
+   
+</div>
+<div id="snackbar"></div>
+</body>
+<script src="script.js"></script>
+</html>
