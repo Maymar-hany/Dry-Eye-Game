@@ -34,11 +34,15 @@
 }
 .play-again{
     background-color:  rgba(5, 134, 194, 0.911);
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
+   
     color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 7px 20px;
     
+    margin: 10px;
+    border: transparent;
     
 }
 .shake:hover {
@@ -168,7 +172,15 @@ html {
     
 }
 
-
+.amount-btn{
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 7px 20px;
+    
+    margin: 5px;
+    border: transparent;
+}
 #relieved{
     padding: 30px;
     background-color: green;
@@ -182,6 +194,22 @@ html {
     background-color: #ff531a;
     border-radius: 20px;
     width: 300px;
+    height: fit-content;
+    color: #fff;
+}
+#wins{
+    padding: 30px;
+    background-color: #004466;
+    border-radius: 20px;
+    width: 300px;
+    height: fit-content;
+    color: #fff;
+}
+#amount{
+    padding: 30px;
+    background-color: #004466;
+    border-radius: 20px;
+    width: 400px;
     height: fit-content;
     color: #fff;
 }
@@ -215,11 +243,11 @@ html {
     user-select: none;
     border-radius: 10px;
     background-color: #004466;
-    
     margin-bottom: 0px;
     width: 100px;
-    height: 100px;
+    height: 105px;
 }
+
 
  .item.can-drop{
     background-color: rgba(16, 99, 155, 0.822);
@@ -270,7 +298,7 @@ p{
     margin: 20px;
 }
 #patient-tile{
-    margin-top: 103px;
+    margin-top: 107px;
     margin-bottom: 40px;
     margin-left: 5px;
     background-color: transparent;
@@ -298,23 +326,13 @@ p{
 #description{
     padding-top: 40px;
 }
-#wins{
-    background-image: url('images/wins.jpg');
-    width: 480px;
-    height: 268px;
-    background-repeat: no-repeat;
-}
+
 #check{
     display: none;   
     position: relative;
 }
 @media (max-width: 480px){
-    #wins{
-        background-image: url('images/wins-mb.jpg');
-        width: 300px;
-        height: 268px;
-        background-repeat: no-repeat;
-    }
+  
 .base-timer {
     position: relative;
     float: right;

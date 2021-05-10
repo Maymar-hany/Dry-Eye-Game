@@ -1,24 +1,26 @@
 
 var compined={
-  'amino+hyaluronic':'images/hyalfid.png',
-  'amino+hyaluronic+riboflavin':'images/ribolisin.png',
-  'amino+hyaluronic+echinacea':'images/iridium.png',
-  'ginkgo+hyaluronic':'images/trium.png',
-  'nacl+hyaluronic':'images/edenorm.png',
+  'amino+hyaluronic0.15%':'images/hyalfid.png',
+  'amino+hyaluronic0.3%':'images/hyalfid-gel.png',
+  'amino+hyaluronic0.15%+riboflavin':'images/ribolisin.png',
+  'amino+hyaluronic0.15%+echinacea':'images/iridium.png',
+  'ginkgo+hyaluronic0.15%':'images/trium.png',
+  'nacl+hyaluronic0.05%':'images/edenorm.png',
   'amino+liposome':'images/tearfid.png',
   'carbopol+echinacea+aloevera':'images/iridium-gel.png',
   'amino+lipoic+hypromelose':'images/tioretin.png'
 }
 var infictions = [
  { 
-  'images/trium.png':'eye-post', 
+  'images/trium.png':'eye-post',
+  'images/hyalfid-gel.png':'long-screen' ,
   'images/hyalfid.png':'long-screen',
   'images/tioretin.png':'diabetic', 
   'images/edenorm.png':'post-surgery', 
   'images/tearfid.png':'Meibomian', 
   'images/iridium.png':'dry',
   'images/ribolisin.png':'uv-light',
-  'images/iridium-gel.png':'red-eye'
+  'images/iridium-gel.png':'red-eye',
  }
  
 ]
@@ -38,6 +40,7 @@ var compounds = [
     name:'Hyaluronic Acid',
     img:'images/hyaluronic.png'
   },
+ 
   {
     id:'carbopol',
     name:'Carbopol',
@@ -92,6 +95,13 @@ var medicines=[
 
   },
   {
+    id:'hyalfid-gel',
+    class:'hyalfid-gel1',
+    img:'images/hyalfid-gel.png',
+    des:'images/hyalfid-gel-des.jpg'
+
+  },
+  {
     id:'trium',
     class:'trium1',
     img:'images/trium.png',
@@ -132,6 +142,7 @@ var medicines=[
   {
     id:'iridium-gel',
     class:'iridium-gel1',
+    des:'images/iridium-des.jpg',
     img:'images/iridium-gel.png'
   },
   
@@ -149,10 +160,11 @@ var patients =[
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon-5.png'
   },
+  
   {
     attribute:'images/edenorm.png',
     id:'post-surgery',
-    infiction:'',
+    
     img:'images/icon-8.png'
   },
   {
@@ -198,6 +210,8 @@ var dropped1='';
 var dropped2="";
 var dropped3="";
 var productResult="";
+var concentartion ="";
+var activated ="";
 var compoundsdiv = document.getElementById('compounds');
 var products = document.getElementById('products');
 var medicine = document.getElementById("medicine");
@@ -205,6 +219,7 @@ var patientsdiv=document.getElementById('patients')
 var lab = document.getElementById('labs')
 var result = document.getElementById("relieved-div")
 var suffer = document.getElementById("suffer-div")
+var amount = document.getElementById("amount-div")
 var toast = document.getElementById("snackbar");
 
 window.onload=function() {
@@ -218,10 +233,10 @@ window.dragMoveListener = dragMoveListener
 function showMedicine ( params  ){
 
     medicines.forEach(element => {
-      if(element.id==='iridium-gel'){
+   /*    if(element.id==='iridium-gel'){
         med = ` 
         <div id="${element.id}" class="is-hidden medicine-item">
-    <img width="150px" id="medicImg" src="${element.img}">
+    <img width="120px" id="medicImg" src="${element.img}">
     </div>
     `
       }else{
@@ -230,8 +245,12 @@ function showMedicine ( params  ){
     <img  id="medicImg" src="${element.img}">
     </div>
     `
-      }
-    
+      } */
+      med = ` 
+        <div id="${element.id}" class="single-medicine is-hidden  medicine-item"> 
+    <img  id="medicImg" src="${element.img}">
+    </div>
+    `
    medicine.innerHTML +=med 
   
   }); 
@@ -243,10 +262,10 @@ function showProducts(){
     cunt++
     if(element.id==='iridium-gel'){
       med = ` 
+      
       <div id="${element.class}" class="product-item  is-hidden">
   <img width="110px" id="medicImg" src="${element.img}">
-  
-  </div>
+ </div>
   `
     }else{
       med = ` 
@@ -280,16 +299,22 @@ moreInfo.addEventListener("mouseout", event => {
 }); 
 }
 function addCompounds (){
+  var compound=""
   compounds.forEach(element => {
+
    // var compound = document.createElement('div')
-    var compound=
+  
+    compound=
     `
     <div id="item-style" class="column is-4"> 
     <div id="${element.id}" class="item">
    <img width="250" height="250" src="${element.img}" >
+  
    </div>
    </div>
         `
+   
+   
         compoundsdiv.innerHTML+= compound
     // compound.classList.add('item')
      
@@ -311,27 +336,6 @@ function addPatients (){
     </div
     </div>
     `
-    /*    <div class="card">
-    <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
-      <span class="icon is-large is-right has-text-success ">
-        <i id="check" class=" fa fa-check"></i>
-      </span>
-      <div class="card-image has-text-centered ">
-        <figure class="image is-64x64 is-inline-block">  
-   <img src="${element.img}" >
-        </figure>
-      </div>
-      <br>
-      <div class="card-content">
-        
-        <div class="content">
-          <p>
-            ${element.infiction}
-          </p>
-        </div>
-      </div>
-    </div>
-    </div> */
 
   patientsdiv.innerHTML +=patient
   });
@@ -376,11 +380,18 @@ interact('.item')
       const item = event.relatedTarget
       item.classList.add('dragging')
       event.target.id="components"
+      activated=item.id
+      
+      if(item.id==='hyaluronic'&& !item.className.includes('concentration-added')){
+        amount.classList.add('is-active')
+        item.classList.add('concentration-added')
+       }
    
     },
     ondropdeactivate: function (event) {
       const item = event.relatedTarget
       event.target.id=""
+    
       item.classList.add('item')
       item.classList.remove('cant-drop','shake')
       item.classList.remove('dragging', 'cannot-drop')
@@ -397,6 +408,7 @@ interact('.item')
         toast.className = "show";
         setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
       }
+      
      
       if (item2===''){
         item2 =event.relatedTarget.id
@@ -412,6 +424,13 @@ interact('.item')
        var target = event.target
        medicdiv = document.createElement('div')
        var Array = item2.split("+");
+       for (let index = 0; index < Array.length; index++) {
+         if(Array[index]==='hyaluronic') {
+          Array[index]='hyaluronic'+concentartion
+           
+         }
+         
+       }
        var one =Array[0]
        var two = Array[1]
        var three = Array[2]
@@ -423,11 +442,22 @@ interact('.item')
        compined[`${three}+${one}+${two}`] ||
        compined[`${one}+${two}`] || compined[`${two}+${one}`]
        
-       dropped1 = document.getElementById(one)
-       
-       dropped2 = document.getElementById(two)
-       
-       dropped3 = document.getElementById(three)
+       if (one==='hyaluronic'+concentartion){
+        dropped1 = document.getElementById('hyaluronic')
+       }else{
+        dropped1 = document.getElementById(one)
+       }
+       if (two==='hyaluronic'+concentartion){
+        dropped2 = document.getElementById('hyaluronic')
+       }else{
+        dropped2 = document.getElementById(two)
+       }
+       if (three==='hyaluronic'+concentartion){
+        dropped3 = document.getElementById('hyaluronic')
+       }else{
+        dropped3 = document.getElementById(three)
+       }
+ 
       if(medicTarget!==undefined ){
 
         medicines.forEach(element => {
@@ -450,14 +480,21 @@ interact('.item')
                 output.src=medicTarget
               }else{
                 audio.play();
+                
+                output.style.height = '328px';
+                output.style.width = '168px';
+                
                 output.src=medicTarget
               }
               
               product.classList.add('is-active') 
-              
+                
                 dropped1.classList.add('is-hidden')
                 dropped2.classList.add('is-hidden')
-                dropped3.classList.add('is-hidden')
+                if(dropped3!==null){
+                  dropped3.classList.add('is-hidden')
+                }
+                
               
             }
          
@@ -471,6 +508,7 @@ interact('.item')
       item.classList.remove('can-drop')
       item.classList.add('cannot-drop')
       item.classList.remove('drop-target')
+      item.classList.remove('concentration-added')
       item.classList.remove('cant-drop','shake','dropped')
       if(count!=0){
         count-=1
@@ -503,7 +541,7 @@ interact('.item')
   interact('.dropzone-patient')
   .dropzone({
     accept: '.medicine-item',
-    overlap: 0.50,
+    overlap: 0.5,
    
     ondropactivate: function (event) {
       const item = event.relatedTarget
@@ -517,10 +555,11 @@ interact('.item')
       const item = event.relatedTarget
       item.classList.remove('cannot-drop')
       item.classList.add('can-drop')  
-      
+      console.log(item);
        if(item.className.includes('medicine-item')){
          //currentmedic = item.querySelector("#"+show.id).querySelector('#medicImg').getAttribute('src') 
          currentmedic = item.querySelector('#medicImg').getAttribute('src')
+         
        }
        var targetid= event.target.id
       
@@ -530,18 +569,14 @@ interact('.item')
       if (attr == currentmedic ){
          // i.style.display='flex' 
          audio.play();
+       
+          item.classList.remove('dragging')
          
-         //console.log(compare);
-         
-        
-          item.classList.remove('medicine-item','dragging')
-        
           }
-          else{
-            
-           
-            
-           }
+          else if(attr==='images/hyalfid.png' && currentmedic ==='images/hyalfid-gel.png'){
+            item.classList.remove('dragging')
+          }
+          
            
     },
     ondragleave: function(event) {
@@ -556,18 +591,17 @@ interact('.item')
     },
     ondrop:function(event) {
       const item = event.relatedTarget
-      
-      if (!item.className.includes('medicine-item')){
+      console.log('hi');
+      if (!item.className.includes('dragging')){
         result.classList.add('is-active')
       document.getElementById("score").innerHTML = ++score;
+      console.log('yes');
     
       }else{
         suffer.classList.add('is-active')
+        console.log('no');
       }
-    if (score===medicines.length){
-      
-         openfinalscore();
-     }
+    
     }
 
   })
@@ -593,6 +627,7 @@ interact('.item')
   }
   function closeproduct(){
     show.classList.remove('is-hidden')
+    console.log(show);
     product.classList.remove('is-active')
   }
   function closeresult(){
@@ -602,8 +637,15 @@ interact('.item')
       productResult.classList.remove('is-hidden')
       dropped1.classList.remove('is-hidden')
                 dropped2.classList.remove('is-hidden')
-                dropped3.classList.remove('is-hidden')
+                if(dropped3!==null){
+                  dropped3.classList.remove('is-hidden')
       
+                }
+                if (score===medicines.length){
+      
+                  openfinalscore();
+              }
+                
     
   }
   function closesuffer(){
@@ -631,4 +673,8 @@ function openDescription(productId) {
 }
 function closedescription(){
   descrip.classList.remove('is-active')
+}
+function concentrate(id) {
+  concentartion =id
+  amount.classList.remove('is-active')
 }

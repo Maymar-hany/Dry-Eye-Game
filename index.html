@@ -88,13 +88,27 @@
      
         
           <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
-           <p id="wintxt"  class=" title">   Winner !</p>
-           <p id="wintxt">Score: <label id="sc"></label> </p>
+           <p id="result-txt"  class=" title">   Winner !</p>
+           <p id="result-txt">Score: <label id="sc"></label> </p>
            
            <button  class="play-again" onClick="window.location.href=window.location.href">Play Again</button>
         
     </div>
   </div>
+  <div id="amount-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="amount" class="modal-content has-text-centered">
+         
+          
+           <p id="result-txt"  class=" title"> Choose the element concentration </p>
+           <button id="0.05%" class="amount-btn" onclick="concentrate(this.id)">0.05%</button>
+           <button id="0.3%" class="amount-btn" onclick="concentrate(this.id)">0.3%</button>
+           <button id="0.15%" class="amount-btn" onclick="concentrate(this.id)">0.15%</button>
+             
+    </div>
+  </div>  
   <div id="relieved-div" class="modal">
     <div class="modal-background is-mobile">
       
